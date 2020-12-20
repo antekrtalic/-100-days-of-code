@@ -1,0 +1,186 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* NAV DIV */
+
+.nav {
+    width: 100%;
+    height: 3rem;
+    display:flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.nav a, .nav button {
+    margin: 5px;
+    text-decoration: none;
+    padding: 5px 10px;
+    line-height: 12px;
+}
+
+.nav a{
+    color: #000000DE;
+    font-family: arial, sans-serif;
+}
+
+#ante {
+    font-size: 20px;
+    background-size: 20px 20px;
+    background: 0;
+    color: white;
+    background-color: #414d48;
+    border-radius: 50%;
+    text-shadow: 2px;
+    border: 0;
+    margin-top: 5px;
+    padding: 10px;
+    text-align: center;
+    font-family: arial, sans-serif;
+}
+
+/* MAIN DIV */
+
+.container {
+
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* SEARCH DIV */
+.search {
+    display: flex;
+    justify-content: center;
+}
+
+.search-2 {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid #ccc;
+   flex-basis: 40%;
+   border-radius: 25px;
+   margin: 5px 0px; 
+}
+
+/* SEARCH ICON */
+.search-icon {
+    width: 20px;
+    height: 20px;
+    padding: 15px;
+}
+
+.search-icon:first-child {
+    height: 20px;
+    width: 20px;
+    color: grey;
+}
+
+
+/* INPUT ICON */
+
+input[type="text"] {
+    width:  487px;
+    height: 34px;
+    border: none;
+    margin: 0;
+    outline: none;
+    text-decoration: none;
+}
+
+/* KEYBOARD ICON */
+.keyboard-icon {
+    padding-right: 10px;
+}
+
+.keyboard {
+    width: 25px;
+    height: 25px;
+}
+
+/* FOOTER DIV */
+
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 15px;
+}
+/* 2 BUTTONS */
+
+.footer input {
+    padding: 10px 10px;
+    font-family: arial, sans-serif;
+    margin: 5px 5px;
+    border: none;
+    
+}
+
+/* LANG DIV */
+
+.lang {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.lang p {
+    color: #000000DE;
+}
+
+.lang a, .lang p {
+    padding: 5px;
+    text-decoration: none;
+    font-family: arial, sans-serif;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
