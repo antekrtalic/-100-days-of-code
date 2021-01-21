@@ -1,16 +1,71 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
-  <meta charset="UTF-8">
-<title>Moj jedan naslov</title>
-<style media="screen">
-h1 {
-  color: skyblue;
-  font-size: 4em;
-}
-</style>
+<html lang="en">
+<head>
+
 </head>
 <body>
-<h1>My Web is here</h1>
+    
+<script type="text/javascript">
+var phonebook = [
+  {
+    firstName: "Ana",
+    lastName: "Anic",
+    phoneNumber: "063/111-111",
+    address: ['Ante Starcevica', '9', 'Mostar', '88000']
+  },
+  {
+    firstName: "Ante",
+    lastName: "Antic",
+    phoneNumber: "063/222-111",
+    address: ['Hrvatske mladezi', '7', 'Mostar', '88000']
+  },
+  {
+    firstName: "Marko",
+    lastName: "Markic",
+    phoneNumber: "063/222-333",
+    address: ['Kraljice Katarine', '10', 'Grude', '88340']
+  },
+  {
+    firstName: "Hrvoje",
+    lastName: "Horvat",
+    phoneNumber: "098/2522-111",
+    address: ['Jarunska ulica', '12', 'Zagreb', '10000']
+  }
+
+];
+
+
+function printProperties () {
+  	phonebook.forEach(element => console.log(Object.entries(element)));
+  	
+ 
+ }
+ function search() {
+ 	let ime = prompt("Unesite ime za pretragu!");
+  let check = phonebook.filter(unos => {
+  	return unos.firstName === ime;
+  })
+  console.log(check);
+ }
+ 
+function addNewContacts(phonebook) {
+ let vrijednost = [];
+ let input = prompt("Unesite adresu");
+ let input1 = prompt("Unesite ime");
+ let input2 = prompt("Unesite prezime");
+ let input3 = prompt("Unesite broj")
+ let adresa = input.slice(",");
+ phonebook.push({firstName: input1, lastName: input2, phoneNumber: input3, address: adresa,});
+ return phonebook;
+}
+function deleteContact(name){ 
+  
+}
+
+
+console.log(addNewContacts(phonebook))
+</script>
 </body>
+
 </html>
+
