@@ -59,11 +59,18 @@ function addNewContacts(phonebook) {
  return phonebook;
 }
 function deleteContact(name){ 
-  
+  let input = prompt("Koga želite izbrisati iz imenika?");
+  for(let x = 0; x < name.length; x++){
+    if(name[x].firstName === input){
+      name.splice(x,1);
+    }
+  }
+  return name;
+
 }
 
 
-console.log(addNewContacts(phonebook))
+console.log(deleteContact(phonebook))
 </script>
 </body>
 
