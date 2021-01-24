@@ -17,10 +17,28 @@ function arrayToList(){
         }
       }
   };
+    return list;
 }
 
+function listToArray(arry){
+  let array = [];
+  array.push(arry);
+  return array;
+}
+
+function prepend(element, list){
+  list.unshift(element);
+  return list;
+}
+
+listToArray(arrayToList());
+console.log(prepend("Jerry",listToArray()));
 
 
+
+let obj = arrayToList();
+
+console.log(listToArray(obj));
 </script>
 </body>
 
