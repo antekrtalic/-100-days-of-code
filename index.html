@@ -6,7 +6,8 @@
 <body>
     
 <script type="text/javascript">
-function arrayToList(){
+let element = prompt("Enter new element!!!");
+const obj = function arrayToList(){
     let list = {
       value: 1,
       rest: {
@@ -31,14 +32,8 @@ function prepend(element, list){
   return list;
 }
 
-listToArray(arrayToList());
-console.log(prepend("Jerry",listToArray()));
 
-
-
-let obj = arrayToList();
-
-console.log(listToArray(obj));
+console.log(element, listToArray(obj()));
 </script>
 </body>
 
