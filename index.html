@@ -6,44 +6,24 @@
 <body>
     
 <script type="text/javascript">
-let element = prompt("Enter new element!!!");
-let input = parseInt(prompt("Enter number you would like to see"));
-const obj = function arrayToList(){
-    let list = {
-      value: 1,
-      rest: {
-        value: 2,
-        rest: {
-          value: 3,
-          rest: null
-        }
-      }
-  };
-    return list;
-}
 
-function listToArray(arry){
-  let array = [];
-  array.push(arry);
-  return array;
-}
+let osoba = {};
 
-function prepend(element, list){
-  list.unshift(element);
-  return list;
+function accepts(callback){
+  setTimeout(callback,1000);
   
 }
 
-function nth(number, list){
-  for(let x = 0; x < list.length; x++){
-    if(number === x){
-      return list[x];
-    }
-  }
-}
 
-console.log(prepend(element, listToArray(obj())));
-console.log(nth(input,prepend(element, listToArray(obj))));
+accepts(function (){
+  osoba.ime = "Ante";
+  osoba.prezime = "Krtalić";
+  console.log(osoba);
+})
+
+console.log(osoba);
+
+
 </script>
 </body>
 
