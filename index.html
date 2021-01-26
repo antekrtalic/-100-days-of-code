@@ -22,14 +22,17 @@
         };
 
         for(let x = argument.length; x >= 0; x--){
-           list = {value: x, rest: list};
+            list.value = x
+            list.rest = {value: argument[x], rest: list.rest};
+            if(list.value === argument.length-1){
+                list.rest = null;
+            }
            
         }
     return list;
    }
     
    console.log(arrayToList(arry));
-   
 
 </script>
 </body>
