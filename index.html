@@ -12,9 +12,8 @@
     for(let x = 1; x < res; x++)
     console.log(" ".repeat(res-x)+ word.repeat(x) + " " + word.repeat(x) + " ".repeat(res-x));
     if(x = 8){
-        res = 1;
-        for(let x = 8; x >; x-- ){
-            console.log(" ".repeat(x-res) + word.repeat(x) + " " + word.repeat(x) + " ".repeat(x-res));
+        for(let x = 1; x < res; x++ ){
+            console.log(" ".repeat(x) + word.repeat(res-x) + " " + word.repeat(res-x) + " ".repeat(x));
         }
     }
 
