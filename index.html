@@ -6,7 +6,7 @@
 <body>
     
 <script type="text/javascript">
-let input = parseInt(prompt("Enter number for arguments"));
+   let input = parseInt(prompt("Enter number for arguments"));
    let arry = [];
 
    for(let x = 0; x < input; x++){
@@ -15,20 +15,21 @@ let input = parseInt(prompt("Enter number for arguments"));
 
    console.log(arry);
    
+   
    function arrayToList(argument){
         let list = {
-            
+
         };
 
-        for(let x = 0; x < argument.length; x++){
-            
-            list.value = argument[x];
-            list.rest = {value: argument[x+1], rest: list.rest};
+        for(let x = argument.length; x >= 0; x--){
+           list = {value: x, rest: list};
+           
         }
-        return list
+    return list;
    }
     
    console.log(arrayToList(arry));
+   
 
 </script>
 </body>
