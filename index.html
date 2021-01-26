@@ -6,16 +6,17 @@
 <body>
     
 <script type="text/javascript">
-  let block = "       ", res;
+  let word = "#";
+    let res = 9;
 
-    for(let x = block.length-1; x >= 0; x--){
-        
-        
-        if(x = 0){
-            console.log(block);
+    for(let x = 1; x < res; x++)
+    console.log(" ".repeat(res-x)+ word.repeat(x) + " " + word.repeat(x) + " ".repeat(res-x));
+    if(x = 8){
+        res = 1;
+        for(let x = 8; x >; x-- ){
+            console.log(" ".repeat(x-res) + word.repeat(x) + " " + word.repeat(x) + " ".repeat(x-res));
         }
     }
-
 
 </script>
 </body>
