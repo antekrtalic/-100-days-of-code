@@ -6,16 +6,29 @@
 <body>
     
 <script type="text/javascript">
-  let word = "#";
-    let res = 9;
+let input = parseInt(prompt("Enter number for arguments"));
+   let arry = [];
 
-    for(let x = 1; x < res; x++)
-    console.log(" ".repeat(res-x)+ word.repeat(x) + " " + word.repeat(x) + " ".repeat(res-x));
-    if(x = 8){
-        for(let x = 1; x < res; x++ ){
-            console.log(" ".repeat(x) + word.repeat(res-x) + " " + word.repeat(res-x) + " ".repeat(x));
+   for(let x = 0; x < input; x++){
+       arry.push(x+1);
+   }
+
+   console.log(arry);
+   
+   function arrayToList(argument){
+        let list = {
+            
+        };
+
+        for(let x = 0; x < argument.length; x++){
+            
+            list.value = argument[x];
+            list.rest = {value: argument[x+1], rest: list.rest};
         }
-    }
+        return list
+   }
+    
+   console.log(arrayToList(arry));
 
 </script>
 </body>
