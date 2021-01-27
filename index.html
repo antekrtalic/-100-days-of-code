@@ -6,33 +6,15 @@
 <body>
     
 <script type="text/javascript">
-   let input = parseInt(prompt("Enter number for arguments"));
-   let arry = [];
+    let knjiga = {
+       autor: "J.R.R.Tolkien",
+       ime: "Gospodar Prstenova",
+       godina: 1954
+   };
 
-   for(let x = 0; x < input; x++){
-       arry.push(x+1);
+   for(key in knjiga){
+       console.log(`${key}:${knjiga[key]}`);
    }
-
-   console.log(arry);
-   
-   
-   function arrayToList(argument){
-        let list = {
-
-        };
-
-        for(let x = argument.length; x >= 0; x--){
-            list.value = x
-            list.rest = {value: argument[x], rest: list.rest};
-            if(list.value === argument.length-1){
-                list.rest = null;
-            }
-           
-        }
-    return list;
-   }
-    
-   console.log(arrayToList(arry));
 
 </script>
 </body>
