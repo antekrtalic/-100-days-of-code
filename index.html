@@ -6,32 +6,19 @@
 <body>
     
 <script type="text/javascript">
-   let movies = [{
-name: 'The Godfather',
-duration: 175,
-rating: 9.2,
-actors: ['Marlon Brando', 'Al Pacino', 'James Caan', 'Richard Castellano']
-}, {
-name: 'The Shawshank Redemption',
-duration: 142,
-rating: 9.3,
-actors: ['Tim Robbins', 'Morgan Freeman', 'Bob Gunton']
-}];
-
-let largest = 0;
-for(let x = 0; x < movies.length; x++){
-    console.log(movies[x].name);
-}
-
-for(let y = 0; y < movies.length; y++){
-    if(movies[y].rating > movies[largest].rating){
-        largest = movies[y].rating;
-    }else{
-        continue;
+  function disemvowel(str) {
+  
+  for(let x = 0; x < str.length; x++){
+    if(str[x].toUpperCase() === "A" || str[x].toUpperCase() === "E"
+       || str[x].toUpperCase() === "I" || str[x].toUpperCase() === "O" || str[x].toUpperCase() === "U"){
+      str = str.split(str[x]);
+      str = str.join("");
     }
-    console.log("Biggest number is " + largest);
+  }
+  
+  return str;
+  
 }
-
 
 </script>
 </body>
