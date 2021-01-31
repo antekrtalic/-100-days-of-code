@@ -6,19 +6,58 @@
 <body>
     
 <script type="text/javascript">
-  function disemvowel(str) {
-  
-  for(let x = 0; x < str.length; x++){
-    if(str[x].toUpperCase() === "A" || str[x].toUpperCase() === "E"
-       || str[x].toUpperCase() === "I" || str[x].toUpperCase() === "O" || str[x].toUpperCase() === "U"){
-      str = str.split(str[x]);
-      str = str.join("");
-    }
-  }
-  
-  return str;
-  
-}
+  function arrayToList(argument){
+        let list = {};
+
+        for(let x = argument.length; x >= 0; x--){
+            list.value = argument[x];
+            list.rest = {value: argument[x+1], rest: list.rest};
+            if(list.value === argument.length){
+                list.rest = null;
+            }
+           
+        }
+    return list;
+   }
+
+   function listToArray(list1){
+       
+       let arrey = [];
+            for(let val1 in list1){
+            if(val1 === "value"){
+                arrey.push(list1[val1]);
+            }else{
+                for(let val2 in list1.rest){
+                if(val2 === "value"){
+                arrey.push(list1.rest[val2]);
+                }else{
+                    for(let val3 in list1.rest.rest){
+                    if(val3 === "value"){
+                        arrey.push(list1.rest.rest.value);
+                    }else{
+                        continue;
+                    }
+                }
+                }
+            }
+            }
+        }
+        return arrey;
+   }
+   
+   let input = parseInt(prompt("Enter number for arguments"));
+   let arry = [];
+
+   for(let x = 0; x < input; x++){
+       arry.push(x+1);
+   }
+
+   console.log(arry);
+   
+   let value1 = arrayToList(arry);
+   
+   console.log(value1);
+   console.log(listToArray(value1));
 
 </script>
 </body>
