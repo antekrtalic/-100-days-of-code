@@ -1,5 +1,7 @@
-players = ["charles", "martina", "michael", "florence", "eli"]
+cars = ["audi", "bmw", "subaru", "toyota"]
 
-print("Here are first three players on my team:")
-for player in players[:3]:
-	print(player.title())
+for car in cars:
+	if car == "bmw":
+		print(car.upper())
+	else:
+		print(car.title())
