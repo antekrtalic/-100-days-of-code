@@ -1,7 +1,16 @@
-cars = ["audi", "bmw", "subaru", "toyota"]
+names = ["john", "alen", "floria", "sim", "eva"]
 
-for car in cars:
-	if car == "bmw":
-		print(car.upper())
-	else:
-		print(car.title())
+name = "Alen"
+
+if name.lower() in names:
+	print(f"This is your name {name}.")
+else:
+	print("We didn't find your name.")
+
+
+name = "Sofia"
+
+if name.lower() not in names:
+	print(f"We didn't find {name}.")
+else:
+	print("There she is.")
