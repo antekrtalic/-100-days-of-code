@@ -1,16 +1,7 @@
-names = ["john", "alen", "floria", "sim", "eva"]
-
-name = "Alen"
-
-if name.lower() in names:
-	print(f"This is your name {name}.")
+age = 17
+if age >= 18:
+	print("You are old enough to vote!")
+	print("Have you registered to vote yet?")
 else:
-	print("We didn't find your name.")
-
-
-name = "Sofia"
-
-if name.lower() not in names:
-	print(f"We didn't find {name}.")
-else:
-	print("There she is.")
+	print("Sorry, you are too young to vote.")
+	print("Please register to vote as soon as you turn 18!")
