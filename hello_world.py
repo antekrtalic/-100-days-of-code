@@ -1,8 +1,9 @@
-requested_toppings = []
+current_users = ["natasha", "john", "eric", "lora", "jacob", "math"]
 
-if requested_toppings:
-	for requested_topping in requested_toppings:
-		print(f"Adding: {requested_topping}.")
-	print("\nFinished making your pizza.")
-else:
-	print("Are you sure you want plain pizza?")
+new_users = ["john", "natasha", "philip", "asta", "eric", "samantha"]
+
+for new_user in new_users:
+	if new_user in current_users:
+		print(f"Username {new_user} was already used!")
+	else:
+		print(f"Username {new_users} is available.")
