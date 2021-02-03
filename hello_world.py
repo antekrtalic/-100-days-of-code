@@ -1,13 +1,6 @@
-favorite_fruits = ["banana", "apple", "strawberry", "orange", "lemons"]
+requested_toppings = ["mushrooms", "green peppers", "extra cheese"]
 
+for requested_topping in requested_toppings:
+	print(f"Adding: {requested_topping}.")
 
-if "banana" in favorite_fruits:
-	print("\nYou really like banana.")
-if "apple" in favorite_fruits:
-	print("\nYou really like apple.")
-if "strawberry" in favorite_fruits:
-	print("\nYou really like strawberry.")
-if "orange" in favorite_fruits:
-	print("\nYou really like orange.")
-if "lemons" in favorite_fruits:
-	print("\nYou really like lemons.")
+print("\nFinished making your pizza")
