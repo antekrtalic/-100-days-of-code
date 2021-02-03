@@ -1,12 +1,13 @@
-age = 12
+favorite_fruits = ["banana", "apple", "strawberry", "orange", "lemons"]
 
-if age < 4:
-	price = 0
-elif age < 18:
-	price = 25
-elif age < 65:
-	price = 40
-elif age >= 65:
-	price = 20
 
-print(f"Your admission cost is ${price}.")
+if "banana" in favorite_fruits:
+	print("\nYou really like banana.")
+if "apple" in favorite_fruits:
+	print("\nYou really like apple.")
+if "strawberry" in favorite_fruits:
+	print("\nYou really like strawberry.")
+if "orange" in favorite_fruits:
+	print("\nYou really like orange.")
+if "lemons" in favorite_fruits:
+	print("\nYou really like lemons.")
