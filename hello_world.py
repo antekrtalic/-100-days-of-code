@@ -1,14 +1,11 @@
-favorite_languages = {
-	'jen': 'python',
-	'sarah': 'c',
-	'edward': 'ruby',
-	'phil': 'python',
-}
+aliens = []
 
-friends = ['phil', 'sarah']
-for name in favorite_languages.keys():
-	print(name.title())
+for alien_number in range(30):
+	new_alien = {'color': 'green', 'points': 5, 'speed': 'slow'}
+	aliens.append(new_alien)
 
-	if name in friends:
-		language = favorite_languages[name].title()
-		print(f"\t{name.title()}, I see you love {language}!")
+for alien in aliens[:5]:
+	print(alien)
+print("...")
+
+print(f"Total number of aliens: {len(aliens)}")
