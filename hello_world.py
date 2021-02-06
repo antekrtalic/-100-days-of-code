@@ -1,20 +1,15 @@
-users = {
-	'aeinstein': {
-		'first': 'albert',
-		'last': 'einstein',
-		'location': 'princeton',
+favorite_numbers = {
+	'ante': {
+		'numbers': [2,5,13,20],
 	},
-	'mcurie': {
-		'first': 'marie',
-		'last': 'curie',
-		'location': 'paris',
+	'lucy': {
+		'numbers': [32,18,4,5],
+	},
+	'carla': {
+		'numbers': [0,11,55,28],
 	},
 }
 
-for username, user_info in users.items():
-	print(f"\nUsername: {username}")
-	full_name = f"{user_info['first']} {user_info['last']}"
-	location = user_info['location']
-
-	print(f"\tFull name: {full_name.title()}")
-	print(f"\tLocation: {location.title()}")
+for name, number in favorite_numbers.items():
+	print(f"\nName: {name.title()}")
+	print(f"\n\tYour favorite numbers are: {number['numbers']}")
