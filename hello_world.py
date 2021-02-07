@@ -1,7 +1,7 @@
-restaurant_seating = input("How many people are there in your dinner group?")
-restaurant_seating = int(restaurant_seating)
+number = input("Enter your number")
+number = int(number)
 
-if restaurant_seating > 8:
-    print("\nYou'll have to wait for the table.")
+if(number % 10 == 0):
+    print(f"\n{number} is multiple of 10")
 else:
-    print("\nTable is ready.")
+    print(f"\n{number} is not multiple of 10")
