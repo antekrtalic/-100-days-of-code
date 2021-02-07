@@ -1,7 +1,7 @@
-number = input("Enter a numbers, and I'll tell you if it's even or odd: ")
-number = int(number)
+restaurant_seating = input("How many people are there in your dinner group?")
+restaurant_seating = int(restaurant_seating)
 
-if number % 2 == 0:
-    print(f"\nThe number {number} is even.")
+if restaurant_seating > 8:
+    print("\nYou'll have to wait for the table.")
 else:
-    print(f"\nThe number {number} is odd.")
+    print("\nTable is ready.")
