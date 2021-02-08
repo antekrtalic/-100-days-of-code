@@ -1,16 +1,6 @@
-responses = {}
-polling_active = True
-
-while polling_active:
-    name = input("\nWhat is your name?")
-    response = input("Which mountain would you like to climb one day? ")
-
-    responses[name] = response
-
-    repeat = input("Would you like to let another person respond? (yes/no) ")
-    if repeat == "no":
-        polling_active = False
-
-print("\n---Poll Results---")
-for name,response in responses.items():
-    print(f"{name} would like to climb {response}.")
+def describe_pet(animal_type, pet_name):
+    """Display information about pet."""
+    print(f"\nI have a {animal_type}.")
+    print(f"My {animal_type}'s name is {pet_name.title()}.")
+describe_pet("hamster", "harry")
+describe_pet("dog", "willie")
