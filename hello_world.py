@@ -1,15 +1,16 @@
-def get_formatted_name(first_name, last_name):
-    full_name = f"{first_name} {last_name}"
-    return full_name.title()
+def make_album(artist_name, album_title, song_numbers=None):
+    music = {"artist": artist_name, "album": album_title}
+
+    if song_numbers:
+        music = {"artist": artist_name, "album": album_title, "songs": song_numbers}
+    return music
 
 while True:
-    print("\nPlease tell me your name:")
-    f_name = input("First name: ")
-    if f_name == "quit":
+    artist = input("\nEnter artist name: ")
+    if artist == "quit":
         break
-    l_name = input("Last name: ")
-    if l_name == "quit":
+    album = input("\nEnter album's name: ")
+    if album == "quit":
         break
-
-    formatted_name = get_formatted_name(f_name, l_name)
-    print(f"\nHello, {formatted_name}!")
+    send = make_album(artist, album)
+    print(send)
