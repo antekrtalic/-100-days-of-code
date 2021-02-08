@@ -1,16 +1,16 @@
-def make_album(artist_name, album_title, song_numbers=None):
-    music = {"artist": artist_name, "album": album_title}
+def print_models(unprinted_designs, completed_models):
+    while unprinted_designs:
+        current_design = unprinted_designs.pop()
+        print(f"Printing model: {current_design}")
+        completed_models.append(current_design)
 
-    if song_numbers:
-        music = {"artist": artist_name, "album": album_title, "songs": song_numbers}
-    return music
+def show_completed_models(completed_models):
+    print("\nThe following models have been printed:")
+    for completed_model in completed_models:
+        print(completed_model)
 
-while True:
-    artist = input("\nEnter artist name: ")
-    if artist == "quit":
-        break
-    album = input("\nEnter album's name: ")
-    if album == "quit":
-        break
-    send = make_album(artist, album)
-    print(send)
+unprinted_designs = ['phone case', 'robot pendant', 'dodecahedron']
+completed_models = []
+
+print_models(unprinted_designs, completed_models)
+show_completed_models(completed_models)
