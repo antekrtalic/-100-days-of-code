@@ -1,36 +1,24 @@
-class User:
-    def __init__(self, first_name, last_name, age, city):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-        self.city = city
+class Car:
+    """A simple attempt to represent a car."""
 
-    def describe_user(self):
-        print("\n***USERS INFORMATION***")
-        print(f"\nFirst name: {self.first_name}")
-        print(f"Last name: {self.last_name}")
-        print(f"Age: {self.age}")
-        print(f"City: {self.city}")
+    def __init__(self, make, model, year):
+        """Initialize attributes to describe car."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
 
-    def greet_user(self):
-        print(f"\nHello {self.first_name}! How are you?")
+    def get_descriptive_name(self):
+        """Return a neatly formatted descriptive name."""
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
 
+    def read_odometer(self):
+        """Print a statement showing the car's mileage."""
+        print(f"This car has {self.odometer_reading} miles on it.")
 
-user = User('Ante', 'Dragoje', 25, 'Zagreb')
-user.describe_user()
-user.greet_user()
+my_new_car = Car('audi', 'a4', 2019)
+print(my_new_car.get_descriptive_name())
 
-user = User('Monika', 'Dragoje', 22, 'Zagreb')
-
-user.describe_user()
-user.greet_user()
-
-user = User('Mirta', 'Didara', 42, 'Osijek')
-
-user.describe_user()
-user.greet_user()
-
-user = User('Igor', 'Jedvaj', 19, 'Varaždin')
-
-user.describe_user()
-user.greet_user()
+my_new_car.odometer_reading = 23
+my_new_car.read_odometer()
