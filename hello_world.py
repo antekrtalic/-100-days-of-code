@@ -1,42 +1,30 @@
-class Car:
-    """A simple attempt to represent a car."""
+class Restaurant:
+    def __init__(self, restaurant_name, cuisine_type):
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 0
 
-    def __init__(self, make, model, year):
-        """Initialize attributes to describe car."""
-        self.make = make
-        self.model = model
-        self.year = year
-        self.odometer_reading = 0
+    def describe_restaurant(self):
+        print(f"\nThis is {self.restaurant_name} with {self.cuisine_type} cuisine type.")
+        print(f"Restaurant has served {self.number_served} customers!")
 
-    def get_descriptive_name(self):
-        """Return a neatly formatted descriptive name."""
-        long_name = f"{self.year} {self.make} {self.model}"
-        return long_name.title()
+    def open_restaurant(self):
+        print("Welcome, restaurant is open!")
 
-    def read_odometer(self):
-        """Print a statement showing the car's mileage."""
-        print(f"This car has {self.odometer_reading} miles on it.")
+    def set_number_served(self, customers):
+       self.number_served = customers
 
-    def update_odometer(self, mileage):
-        """
-        Set the odometer reading to the given value.
-        Reject the change if it attempts to roll the odometer back.
-        """
+    def increment_number_served(self, increment):
+        self.number_served += increment
+restaurant = Restaurant('Maslina', 'bistro')
 
-        if mileage >= self.odometer_reading:
-            self.odometer_reading = mileage
-        else:
-            print("You can't roll back an odometer!")
+restaurant.describe_restaurant()
+restaurant.open_restaurant()
 
-    def increment_odometer(self, miles):
-        """Add the given amount to the odometer reading. """
-        self.odometer_reading += miles
+restaurant.set_number_served(3)
+restaurant.describe_restaurant()
+restaurant.open_restaurant()
 
-my_used_car = Car('subaru', 'outback', 2015)
-print(my_used_car.get_descriptive_name())
-
-my_used_car.update_odometer(23_500)
-my_used_car.read_odometer()
-
-my_used_car.increment_odometer(100)
-my_used_car.read_odometer()
+restaurant.increment_number_served(6)
+restaurant.describe_restaurant()
+restaurant.open_restaurant()
