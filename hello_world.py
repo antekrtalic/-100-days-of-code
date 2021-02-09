@@ -1,10 +1,23 @@
-def build_profile(first, last, **user_info):
-    user_info['first_name'] = first
-    user_info['last_name'] = last
-    return user_info
+class Restaurant:
+    def __init__(self, restaurant_name, cuisine_type):
+        self.name = restaurant_name
+        self.type = cuisine_type
 
-user_profile = build_profile('albert', 'einstein',
-                             location='princeton',
-                             field='physics')
+    def describe_restaurant(self):
+        print(f"This is {self.name} with {self.type} cuisine type.")
 
-print(user_profile)
+    def open_restaurant(self):
+        print("Restaurant is open!")
+
+restaurant = Restaurant('Mirazur', 'fine-dining')
+restaurant.describe_restaurant()
+restaurant.open_restaurant()
+
+restaurant = Restaurant('Noma', 'casual dining')
+restaurant.describe_restaurant()
+
+restaurant = Restaurant('Asador Etxebarri', 'fast-casual')
+restaurant.describe_restaurant()
+
+restaurant = Restaurant('Gaggan', 'fast food')
+restaurant.describe_restaurant()
