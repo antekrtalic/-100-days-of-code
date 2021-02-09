@@ -1,36 +1,58 @@
-class User:
-    def __init__(self, first_name, last_name, age, city):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.age = age
-        self.city = city
-        self.login_attempts = 0
+class Car:
+    """A simple attempt to represent a car."""
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
 
-    def describe_user(self):
-        print("\n***SUMMARY OF USER'S INFORMATIONS***")
-        print(f"\nFirst name: {self.first_name}")
-        print(f"Last name: {self.last_name}")
-        print(f"Age: {self.age}")
-        print(f"City: {self.city}")
+    def get_descriptive_name(self):
+        long_name = f"{self.year} {self.make} {self.model}"
+        return long_name.title()
 
-    def greet_user(self):
-        print(f"\nHello {self.first_name}!It's good to see you.")
+    def read_odometer(self):
+        print(f"This car has {self.odometer_reading} miles on it.")
 
-    def increment_login(self):
-        self.login_attempts += 1
+    def update_odometer(self, mileage):
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back an odometer!")
 
+    def increment_odometer(self, miles):
+        self.odometer_reading += miles
 
-    def reset_login_attempts(self):
-        self.login_attempts = 0
+class Battery:
+    """A simple attempt to model a battery for an electric car."""
 
-user = User('Ante', 'Dragoje', 25, 'Mostar')
-user.describe_user()
+    def __init__(self, battery_size=75):
+        self.battery_size = battery_size
 
-user.increment_login()
-user.increment_login()
-user.increment_login()
-user.increment_login()
-user.increment_login()
-print(f"Logging attempt so far: {user.login_attempts}")
-user.reset_login_attempts()
-print(f"Logging attempt so far: {user.login_attempts}")
+    def describe_battery(self):
+        """Print a statement describing the battery size."""
+        print(f"This car has a {self.battery_size}-kwH battery.")
+
+    def get_range(self):
+        """Print a statement about the range this battery provides."""
+        if self.battery_size == 75:
+            range = 260
+        elif self.battery_size == 100:
+            range = 315
+
+        print(f"This car can go about {range} miles on full charge.")
+
+class ElectricCar(Car):
+    """Represent aspect of a car, specific to eletric vehicle."""
+
+    def __init__(self, make, model, year):
+        """
+        Initialize attributes of the parent class.
+        Then initialize attributes specific to an electric car.
+        """
+        super().__init__(make, model, year)
+        self.battery = Battery()
+
+my_tesla = ElectricCar('tesla', 'model s', 2019)
+print(my_tesla.get_descriptive_name())
+my_tesla.battery.describe_battery()
+my_tesla.battery.get_range()
