@@ -1,23 +1,36 @@
-class Restaurant:
-    def __init__(self, restaurant_name, cuisine_type):
-        self.name = restaurant_name
-        self.type = cuisine_type
+class User:
+    def __init__(self, first_name, last_name, age, city):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+        self.city = city
 
-    def describe_restaurant(self):
-        print(f"This is {self.name} with {self.type} cuisine type.")
+    def describe_user(self):
+        print("\n***USERS INFORMATION***")
+        print(f"\nFirst name: {self.first_name}")
+        print(f"Last name: {self.last_name}")
+        print(f"Age: {self.age}")
+        print(f"City: {self.city}")
 
-    def open_restaurant(self):
-        print("Restaurant is open!")
+    def greet_user(self):
+        print(f"\nHello {self.first_name}! How are you?")
 
-restaurant = Restaurant('Mirazur', 'fine-dining')
-restaurant.describe_restaurant()
-restaurant.open_restaurant()
 
-restaurant = Restaurant('Noma', 'casual dining')
-restaurant.describe_restaurant()
+user = User('Ante', 'Dragoje', 25, 'Zagreb')
+user.describe_user()
+user.greet_user()
 
-restaurant = Restaurant('Asador Etxebarri', 'fast-casual')
-restaurant.describe_restaurant()
+user = User('Monika', 'Dragoje', 22, 'Zagreb')
 
-restaurant = Restaurant('Gaggan', 'fast food')
-restaurant.describe_restaurant()
+user.describe_user()
+user.greet_user()
+
+user = User('Mirta', 'Didara', 42, 'Osijek')
+
+user.describe_user()
+user.greet_user()
+
+user = User('Igor', 'Jedvaj', 19, 'Varaždin')
+
+user.describe_user()
+user.greet_user()
