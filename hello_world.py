@@ -1,30 +1,36 @@
-class Restaurant:
-    def __init__(self, restaurant_name, cuisine_type):
-        self.restaurant_name = restaurant_name
-        self.cuisine_type = cuisine_type
-        self.number_served = 0
+class User:
+    def __init__(self, first_name, last_name, age, city):
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
+        self.city = city
+        self.login_attempts = 0
 
-    def describe_restaurant(self):
-        print(f"\nThis is {self.restaurant_name} with {self.cuisine_type} cuisine type.")
-        print(f"Restaurant has served {self.number_served} customers!")
+    def describe_user(self):
+        print("\n***SUMMARY OF USER'S INFORMATIONS***")
+        print(f"\nFirst name: {self.first_name}")
+        print(f"Last name: {self.last_name}")
+        print(f"Age: {self.age}")
+        print(f"City: {self.city}")
 
-    def open_restaurant(self):
-        print("Welcome, restaurant is open!")
+    def greet_user(self):
+        print(f"\nHello {self.first_name}!It's good to see you.")
 
-    def set_number_served(self, customers):
-       self.number_served = customers
+    def increment_login(self):
+        self.login_attempts += 1
 
-    def increment_number_served(self, increment):
-        self.number_served += increment
-restaurant = Restaurant('Maslina', 'bistro')
 
-restaurant.describe_restaurant()
-restaurant.open_restaurant()
+    def reset_login_attempts(self):
+        self.login_attempts = 0
 
-restaurant.set_number_served(3)
-restaurant.describe_restaurant()
-restaurant.open_restaurant()
+user = User('Ante', 'Dragoje', 25, 'Mostar')
+user.describe_user()
 
-restaurant.increment_number_served(6)
-restaurant.describe_restaurant()
-restaurant.open_restaurant()
+user.increment_login()
+user.increment_login()
+user.increment_login()
+user.increment_login()
+user.increment_login()
+print(f"Logging attempt so far: {user.login_attempts}")
+user.reset_login_attempts()
+print(f"Logging attempt so far: {user.login_attempts}")
