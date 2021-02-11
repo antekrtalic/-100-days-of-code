@@ -1,25 +1,24 @@
 import random
 
 random_number = random.randint(1, 10)
+guess = None
 
-guess = int(input("Guess a number between 1 and 10"))
 
-while guess != random_number:
-    guess = int(input("Guess a number between 1 and 10"))
-    too_low = random_number - guess
-    too_high = guess - random_number
-    if too_low >= 1:
-        print("Too low, try again!")
-    elif too_high >= 1:
-        print("Too high, try again!")
-    if guess == random_number:
-        print("You guessed it!You won!")
-        ask = input("Do you want to keep playing? (y/n)")
-        if ask == "y":
+while True:
+    guess = input("Pick a number from 1 to 10: ")
+    guess = int(guess)
+    if guess < random_number:
+        print("TOO LOW!")
+    elif guess > random_number:
+        print("TOO HIGH!")
+    else:
+        print("YOU WON!")
+        play_again = input("Do you want to play again? (y/n) ")
+        if play_again == "y":
             random_number = random.randint(1, 10)
-            guess = int(input("Guess a number between 1 and 10"))
-        elif ask == "n":
-            break
+            guess = None
         else:
-            print("You type wrong answer")
-            ask = input("Do you want to keep playing? (y/n)")
+            print("Thank you for playing!")
+            break
+
+print(random_number)
