@@ -1,22 +1,25 @@
-from random import choice
-from random import choices
+import random
 
-lottery = ["M", "A", 3, 11, 15, 26, 18, 19, 4, 2, 55, 63, "R", "L"]
-prize_combination = []
+random_number = random.randint(1, 10)
 
-while len(prize_combination) != 4:
-    current = choice(lottery)
-    prize_combination.append(current)
+guess = int(input("Guess a number between 1 and 10"))
 
-print(f"This is prize combination: {prize_combination}")
-
-my_ticket = []
-count = 0
-
-while my_ticket != prize_combination:
-    my_ticket = choices(lottery, k=4)
-    count += 1
-
-if my_ticket == prize_combination:
-    print(f"You win first prize! It took you {count} guesses:")
-    print(my_ticket, prize_combination)
+while guess != random_number:
+    guess = int(input("Guess a number between 1 and 10"))
+    too_low = random_number - guess
+    too_high = guess - random_number
+    if too_low >= 1:
+        print("Too low, try again!")
+    elif too_high >= 1:
+        print("Too high, try again!")
+    if guess == random_number:
+        print("You guessed it!You won!")
+        ask = input("Do you want to keep playing? (y/n)")
+        if ask == "y":
+            random_number = random.randint(1, 10)
+            guess = int(input("Guess a number between 1 and 10"))
+        elif ask == "n":
+            break
+        else:
+            print("You type wrong answer")
+            ask = input("Do you want to keep playing? (y/n)")
