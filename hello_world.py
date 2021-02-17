@@ -1,5 +1,5 @@
-def triple_and_filter(arry):
-    x = [x*3 for x in arry if x % 4 == 0]
-    return x
+def extract_full_name(arry):
+    return [" ".join(i.values()) for i in arry]
+    
+print(names = [{'first': 'Elie', 'last': 'Schoppik'}, {'first': 'Colt', 'last': 'Steele'}])
 
-print(triple_and_filter([1,2,3,4]))
