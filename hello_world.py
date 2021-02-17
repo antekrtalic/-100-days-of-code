@@ -1,11 +1,6 @@
-def divide(a, b):
-    try:
-       result = a/b
-    except (ZeroDivisionError, TypeError) as err:
-        print("Something went wrong!")
-        print(err)
-    else:
-        print(f"{a} divided by {b} is {result}")
+def add_numbers(a, b, c, d):
+    import pdb; pdb.set_trace()
 
-print(divide(1,2))
-print(divide(1,"a"))
+    return a + b + c + d
+
+add_numbers(1,2,3,4)
