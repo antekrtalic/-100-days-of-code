@@ -1,4 +1,9 @@
-def sum_floats(*fls):
-    return sum(fl for fl in fls if type(fl) == float)
+def interleave(string1, string2):
+    string1 = tuple(string1)
+    string2 = tuple(string2)
+    string3 = list(zip(string1, string2))
+    x = ["".join(x) for x in string3]
+    return "".join(x)
 
-print(sum_floats(1.5, 2.4, 'awesome', [], 1))
+
+print(interleave("hi","ha"))
