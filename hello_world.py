@@ -1,8 +1,10 @@
-filename = 'learning_python.txt'
-with open(filename) as file_object:
-    lines = file_object.readlines()
+filename = "guest.txt"
 
-for line in lines:
-    message = line
-    print(message.replace("functions", "class"))
-    print(message.replace("OOP", "POO"))
+with open(filename, "a") as file_object:
+    x = 0
+    while x in range(3):
+        user = input("What is your name? ")
+        print(f"Welcome {user}")
+        file_object.write(f"{user}\n")
+        print(f"You were successfully added in the {filename}")
+        x += 1
