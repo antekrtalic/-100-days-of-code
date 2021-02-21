@@ -1,8 +1,16 @@
-filename = "responses.txt"
+print("Give me two numbers and I'll divide them.")
+print("Enter 'q' to quit.")
 
-with open(filename, "a") as file_object:
-    x = 0
-    while x in range(3):
-        user = input("Why do you like programming so much? ")
-        file_object.write(f"{user}\n")
-        x += 1
+while True:
+    first_number = input("\nFirst number: ")
+    if first_number == 'q':
+        break
+    second_number = input("Second number: ")
+    if second_number == 'q':
+        break
+    try:
+        answer = int(first_number) / int(second_number)
+    except ZeroDivisionError:
+        print("You can't divide by 0!")
+    else:
+        print(answer)
