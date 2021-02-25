@@ -1,33 +1,36 @@
-import json
+import sys
 
-def get_stored_username():
-    """Get stored username if available."""
-    filename = 'username.json'
-    try:
-        with open(filename) as f:
-            username = json.load(f)
-    except FileNotFoundError:
-        return None
-    else:
-        return username
+import pygame
 
-def get_new_username():
-    """Prompt for new username."""
-    username = input("What is your name? ")
-    filename = 'username.json'
-    with open(filename, 'w') as f:
-        json.dump(username, f)
-    return username
+from wooden_boy import Wooden_Boy
 
-def greet_user():
-    """Greet the user by name."""
-    username = get_stored_username()
-    print(username)
-    check = input("Is this your username? (y/n)")
-    if check == "y":
-        print(f"Welcome back, {username}")
-    else:
-        username = get_new_username()
-        print(f"We'll remember you when you come back, {username}!")
+class Window:
 
-greet_user()
+
+    def __init__(self):
+
+        pygame.init()
+
+        self.screen = pygame.display.set_mode((1200, 800))
+        pygame.display.set_caption("Pygame Window")
+
+        self.boy = Wooden_Boy(self)
+
+        self.bg_color = (0, 0, 255)
+
+
+    def run_window(self):
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    sys.exit()
+
+            self.screen.fill(self.bg_color)
+            self.boy.blitme()
+
+            pygame.display.flip()
+
+
+if __name__ == "__main__":
+    win = Window()
+    win.run_window()
