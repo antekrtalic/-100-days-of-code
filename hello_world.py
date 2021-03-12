@@ -1,11 +1,17 @@
 from random import choice
 
-def greet(person):
-    def get_mood():
-        msg = choice(("Hello there ", "Go away ", "I love you "))
-        return msg
+def make_laugh_func(person):
+    def get_laugh():
+        laugh = choice(("HAHAHAHHA", "lol", "teheheh"))
+        return f"{laugh} {person}"
+    return get_laugh
 
-    result = get_mood() + person
-    return result
+laugh_at = make_laugh_func("Linda")
+print(laugh_at())
+print(laugh_at())
+print(laugh_at())
+print(laugh_at())
+print(laugh_at())
+print(laugh_at())
 
-print(greet("Toby"))
+
