@@ -1,10 +1,11 @@
-def get_unlimited_multiples(number=1):
-  sum = number
-  while True:
-    yield sum
-    sum += number
+from random import choice
 
+def greet(person):
+    def get_mood():
+        msg = choice(("Hello there ", "Go away ", "I love you "))
+        return msg
 
+    result = get_mood() + person
+    return result
 
-sevens = get_unlimited_multiples(7)
-[print(next(sevens)) for i in range(15)]
+print(greet("Toby"))
