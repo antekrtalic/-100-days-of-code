@@ -1,12 +1,19 @@
-def be_polite(fn):
-    def wrapper():
-        print("What a pleasure to meet you!")
-        fn()
-        print("Have a great day!")
+def shout(fn):
+    def wrapper(*args, **kwargs):
+        return fn(*args, **kwargs).upper()
     return wrapper
 
-@be_polite
-def greet():
-    print("My name is Matt.")
+@shout
+def greet(name):
+    return f"Hi, I'm {name}."
 
-greet()
+@shout
+def order(main, side):
+    return f"Hi, I'd like the {main}, with a side of {side}, please."
+
+@shout
+def lol():
+    return "Lol"
+print(greet("todd"))
+print(order(side="burger", main="fries"))
+print(lol())
