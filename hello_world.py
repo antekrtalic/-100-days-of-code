@@ -1,17 +1,12 @@
-from random import choice
+def be_polite(fn):
+    def wrapper():
+        print("What a pleasure to meet you!")
+        fn()
+        print("Have a great day!")
+    return wrapper
 
-def make_laugh_func(person):
-    def get_laugh():
-        laugh = choice(("HAHAHAHHA", "lol", "teheheh"))
-        return f"{laugh} {person}"
-    return get_laugh
+@be_polite
+def greet():
+    print("My name is Matt.")
 
-laugh_at = make_laugh_func("Linda")
-print(laugh_at())
-print(laugh_at())
-print(laugh_at())
-print(laugh_at())
-print(laugh_at())
-print(laugh_at())
-
-
+greet()
