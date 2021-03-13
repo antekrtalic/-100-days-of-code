@@ -1,19 +1,18 @@
-def shout(fn):
+from functools import wraps
+
+def log_function_data(fn):
+    @wraps(fn)
     def wrapper(*args, **kwargs):
-        return fn(*args, **kwargs).upper()
+# ........."""I AM WRAPPER FUNCTION"""
+        print(f"You are about to call {fn.__name__}")
+        print(f"Here's the documentation: {fn.__doc__}")
     return wrapper
 
-@shout
-def greet(name):
-    return f"Hi, I'm {name}."
+@log_function_data
+def add(x,y):
+    '''Adds two numbers together.'''
+    return x + y
 
-@shout
-def order(main, side):
-    return f"Hi, I'd like the {main}, with a side of {side}, please."
-
-@shout
-def lol():
-    return "Lol"
-print(greet("todd"))
-print(order(side="burger", main="fries"))
-print(lol())
+print(add.__doc__)
+print(add.__name__)
+print(help(add))
