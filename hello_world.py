@@ -1,18 +1,47 @@
-# def add_positive_numbers(x, y):
-#    assert x > 0 and y > 0, "Both numbers must be positive!"
-#    return x + y
+# def add(a, b):
+#    """
+#     >>> add(2, 3)
+#    5
+#    >>> add(100, 200)
+#    300
+#    """
+#    return a + b
 
-# print(add_positive_numbers(1, 1))
-# print(add_positive_numbers(1, -1))
+def double(values):
+    """ double the values in a list
+    >>> double([1,2,3,4])
+    [2, 4, 6, 8]
 
-def eat_junk(food):
-    assert food in [
-        "pizza",
-        "ice cream",
-        "candy",
-        "fried butter"
-    ], "food must be a junk food!"
-    return f"NOM NOM NOM I am eating {food}"
+    >>> double([])
+    []
 
-food = input("ENTER A FOOD PLEASE: ")
-print(eat_junk(food))
+    >>> double(['a', 'b', 'c'])
+    ['aa', 'bb', 'cc']
+
+    >>> double([True, None])
+    Traceback (most recent call last):
+        ...
+    TypeError: unsupported operand type(s) for *: 'int' and 'NoneType'
+    """
+    return [2 * element for element in values]
+
+def say_hi():
+    """
+    >>> say_hi()
+    'hi'
+    """
+    return "hi"
+
+def true_that():
+    """
+    >>> true_that()
+    True
+    """
+    return True
+
+def make_dict():
+    """
+    >>> make_dict(['a', 'b'])
+    {'a': True, 'b': True}
+    """
+    return {key: True for key in keys}
