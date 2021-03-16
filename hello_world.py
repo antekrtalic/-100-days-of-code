@@ -1,18 +1,18 @@
-from functools import wraps
+# def add_positive_numbers(x, y):
+#    assert x > 0 and y > 0, "Both numbers must be positive!"
+#    return x + y
 
-def ensure_authorized(fn):
-    @wraps(fn)
-    def wrapper(*args, **kwargs):
-        if kwargs.get("role") == "admin":
-            return fn(*args, **kwargs)
-        return "Unauthorized"
+# print(add_positive_numbers(1, 1))
+# print(add_positive_numbers(1, -1))
 
-    return wrapper
+def eat_junk(food):
+    assert food in [
+        "pizza",
+        "ice cream",
+        "candy",
+        "fried butter"
+    ], "food must be a junk food!"
+    return f"NOM NOM NOM I am eating {food}"
 
-@ensure_authorized
-def show_secrets(*args, **kwargs):
-    return "Shh!Don't tell anybody."
-
-
-print(show_secrets(role="admin"))
-print(show_secrets(role="nobody"))
+food = input("ENTER A FOOD PLEASE: ")
+print(eat_junk(food))
