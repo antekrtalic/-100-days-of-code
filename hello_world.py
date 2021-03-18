@@ -1,12 +1,28 @@
-fhand = open('mbox-short.txt')
-count = 0
+enter_file = input("Enter file name: ")
+fhand = open(enter_file)
+msg_count = {}
 
 for sent in fhand:
-    sent.rstrip()
-    if sent.startswith("From"):
-        sent = sent.split(" ")
-        if len(sent) > 2:
-            count += 1
-            print(sent[1].strip())
+    if sent.startswith("Received:"):
+        words = sent.split(" ")
+        msg_snt = words[2].rstrip()
+        msg_count[msg_snt] = msg_count.get(msg_snt, 0) + 1
 
-print(f"There were {count} lines in the file with From as the first word")
+min = 50
+min_email = ""
+for key,value in msg_count.items():
+    if value < min:
+        min = value
+        min_email = key
+
+print(min_email, min)
+
+max = 0
+max_email = ""
+
+for key,value in msg_count.items():
+    if value > max:
+        max = value
+        max_email = key
+
+print(max_email, max)
