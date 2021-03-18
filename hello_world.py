@@ -1,16 +1,12 @@
-def chop(t):
-    letters.remove("a")
-    letters.remove("f")
-    return None
+fhand = open('mbox-short.txt')
+count = 0
 
+for sent in fhand:
+    sent.rstrip()
+    if sent.startswith("From"):
+        sent = sent.split(" ")
+        if len(sent) > 2:
+            count += 1
+            print(sent[1].strip())
 
-letters = ["a", "b", "c", "d", "e", "f"]
-
-print(chop(letters))
-
-
-def middle(new_t):
-    return new_t[1:-1]
-
-
-print(middle(letters))
+print(f"There were {count} lines in the file with From as the first word")
