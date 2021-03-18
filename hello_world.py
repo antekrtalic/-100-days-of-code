@@ -1,15 +1,16 @@
-file_name = input("Enter file name: ")
-if file_name == "na na boo boo":
-    print("NA NA BOO BOO TO YOU TOO - You have been punk'd!")
-fhand = open(file_name)
-sum = 0
-count = 0
-total_count = 0
-for sent in fhand:
-    if sent.startswith("X-DSPAM-Confidence:"):
-        x = sent.find(":")
-        sum += float(sent[x+1:].strip())
-        count += 1
+def chop(t):
+    letters.remove("a")
+    letters.remove("f")
+    return None
 
-total_count = sum / count
-print("Average spam confidence:", total_count)
+
+letters = ["a", "b", "c", "d", "e", "f"]
+
+print(chop(letters))
+
+
+def middle(new_t):
+    return new_t[1:-1]
+
+
+print(middle(letters))
