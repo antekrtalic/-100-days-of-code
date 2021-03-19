@@ -1,28 +1,14 @@
-enter_file = input("Enter file name: ")
-fhand = open(enter_file)
-msg_count = {}
+txt = 'but soft what light in yonder window breaks'
+words = txt.split()
+t = list()
 
-for sent in fhand:
-    if sent.startswith("Received:"):
-        words = sent.split(" ")
-        msg_snt = words[2].rstrip()
-        msg_count[msg_snt] = msg_count.get(msg_snt, 0) + 1
+for word in words:
+    t.append((len(word), word))
 
-min = 50
-min_email = ""
-for key,value in msg_count.items():
-    if value < min:
-        min = value
-        min_email = key
+t.sort(reverse=True)
 
-print(min_email, min)
+res = list()
+for length, word in t:
+    res.append(word)
 
-max = 0
-max_email = ""
-
-for key,value in msg_count.items():
-    if value > max:
-        max = value
-        max_email = key
-
-print(max_email, max)
+print(res)
