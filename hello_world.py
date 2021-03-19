@@ -1,14 +1,20 @@
-txt = 'but soft what light in yonder window breaks'
-words = txt.split()
-t = list()
+fhand = open('mbox-short.txt')
+d = dict()
+count = 0
 
-for word in words:
-    t.append((len(word), word))
+for sent in fhand:
+    if sent.startswith("From:"):
+        words = sent.split()
+        email = words[1]
+        if email not in d:
+            d[email] = 1
+        else:
+            d[email] += 1
 
-t.sort(reverse=True)
+print(d)
 
-res = list()
-for length, word in t:
-    res.append(word)
+l = list()
 
-print(res)
+em_orders = [(v, k) for k,v in d.items()]
+em_orders.sort(reverse=True)
+print(em_orders)
