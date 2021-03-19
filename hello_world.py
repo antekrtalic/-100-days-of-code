@@ -1,20 +1,15 @@
 fhand = open('mbox-short.txt')
 d = dict()
 count = 0
-
 for sent in fhand:
-    if sent.startswith("From:"):
-        words = sent.split()
-        email = words[1]
-        if email not in d:
-            d[email] = 1
-        else:
-            d[email] += 1
+    check = sent.startswith("From")
+    words = sent.split()
+    if check and len(words) > 2:
+        y = words[5].find(":")
+        hour = words[5][:y]
+        d[hour] = d.get(hour, 0) + 1
 
-print(d)
 
-l = list()
+for k,v in d.items():
+    print(k,v)
 
-em_orders = [(v, k) for k,v in d.items()]
-em_orders.sort(reverse=True)
-print(em_orders)
