@@ -1,17 +1,9 @@
-fhand = open('romeo.txt')
-alphabet = "abcdefghijklmnoprstuvwxyz"
-d = dict()
-for sent in fhand:
-    sent = sent.rstrip().lower()
-    for char in sent:
-        if char in alphabet:
-            d[char] = d.get(char, 0) + 1
+data = 'From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008'
+atpos = data.find("@")
+print(atpos)
 
-l = list()
-for key, value in d.items():
-    l.append((value, key))
+sppos = data.find(' ', atpos)
+print(sppos)
 
-l.sort(reverse=True)
-
-for v,k in l:
-    print(k, v)
+host = data[atpos+1: sppos]
+print(host)
