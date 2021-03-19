@@ -1,15 +1,17 @@
-fhand = open('mbox-short.txt')
+fhand = open('romeo.txt')
+alphabet = "abcdefghijklmnoprstuvwxyz"
 d = dict()
-count = 0
 for sent in fhand:
-    check = sent.startswith("From")
-    words = sent.split()
-    if check and len(words) > 2:
-        y = words[5].find(":")
-        hour = words[5][:y]
-        d[hour] = d.get(hour, 0) + 1
+    sent = sent.rstrip().lower()
+    for char in sent:
+        if char in alphabet:
+            d[char] = d.get(char, 0) + 1
 
+l = list()
+for key, value in d.items():
+    l.append((value, key))
 
-for k,v in d.items():
-    print(k,v)
+l.sort(reverse=True)
 
+for v,k in l:
+    print(k, v)
