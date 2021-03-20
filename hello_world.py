@@ -3,5 +3,5 @@ hand = open('mbox-short.txt')
 
 for line in hand:
     line = line.rstrip()
-    if re.search('^X-\S*: [0-9.0]+', line):
-        print(line)
+    x = re.findall('^From .* ([0-9][0-9]):', line)
+    if len(x) > 0: print(x)
