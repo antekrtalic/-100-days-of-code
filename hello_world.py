@@ -1,11 +1,17 @@
 import urllib.request, urllib.parse, urllib.error
+from bs4 import BeautifulSoup
+import ssl
 
-fhand = urllib.request.urlopen('http://data.pr4e.org/romeo.txt')
+# Ignore SSL certificate errors
+ctx = ssl.create_default_context()
+ctx.check_hostname = False
+ctx.verify_mode = ssl.CERT_NONE
 
-count = dict()
-for line in fhand:
-    words = line.decode().split()
-    for word in words:
-        count[word] = count.get(word, 0) + 1
+url = input('Enter - ')
+html = urllib.request.urlopen(url, context=ctx).read()
+soup = BeautifulSoup(html, 'html.parser')
 
-print(count)
+# Retrieve all of the anchor tags
+tags = soup('a')
+for tag in tags:
+    print(tag.get('href', None))
