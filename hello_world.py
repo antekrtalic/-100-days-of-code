@@ -1,14 +1,13 @@
-import re
-hand = open('mbox.txt')
-count = 0
-sum = 0
+import socket
 
+mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+mysock.connect(('data.pr4e.org', 80))
+cmd = 'GET http://data.pr4e.org/romeo.txt HTTP/1.0\n\n'.encode()
+mysock.send(cmd)
 
-for line in hand:
-    line = line.rstrip()
-    x = re.findall('^Details:.*rev=([0-9]+)', line)
-    if len(x) > 0:
-        count += 1
-        sum += int(x[0])
-
-print(int(sum / count))
+while True:
+    data = mysock.recv(512)
+    if (len(data) < 1):
+        break
+    print(data.decode())
+mysock.close()
