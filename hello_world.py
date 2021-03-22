@@ -1,17 +1,13 @@
-import urllib.request, urllib.parse, urllib.error
-from bs4 import BeautifulSoup
-import ssl
+import xml.etree.ElementTree as ET
 
-# Ignore SSL certificate errors
-ctx = ssl.create_default_context()
-ctx.check_hostname = False
-ctx.verify_mode = ssl.CERT_NONE
+data = '''<person>
+    <name>Chuck</name>
+    <phone type="int1">
+        +1 734 303 4456
+    </phone>
+    <email hide="yes"/>
+</person>'''
 
-url = input('Enter - ')
-html = urllib.request.urlopen(url, context=ctx).read()
-soup = BeautifulSoup(html, 'html.parser')
-
-# Retrieve all of the anchor tags
-tags = soup('a')
-for tag in tags:
-    print(tag.get('href', None))
+tree = ET.fromstring(data)
+print('Name:', tree.find('name').text)
+print('Attr:', tree.find('email').get('hide'))
