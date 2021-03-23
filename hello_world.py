@@ -1,15 +1,14 @@
-import json
-data = '''{
-    "name": "Chuck",
-    "phone": {
-        "type": "intl",
-        "number": "+1 734 303 4456"
-    },
-    "email": {
-        "hide": "yes"
-    }
-}'''
+import xml.etree.ElementTree as ET
+data = '''
+<person>
+    <name>Chuck</name>
+    <phone type="intl">
+        +1 734 303 4456
+    </phone>
+    <email hide="yes" />
+</person>
+'''
 
-info = json.loads(data)
-print('Name', info["name"])
-print('Hide', info["email"]["hide"])
+tree = ET.fromstring(data)
+print('Name:', tree.find('name').text)
+print('Attr:', tree.find('email').get('hide'))
