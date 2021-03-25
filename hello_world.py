@@ -1,17 +1,19 @@
-class PartyAnimal:
-    x = 0
-    name = ''
-    def __init__(self, nam):
-        self.name = nam
-        print(self.name,'constructed')
+import sqlite3
 
-    def party(self):
-        self.x = self.x + 1
-        print(self.name,'party count', self.x)
+conn = sqlite3.connect('music.sqlite')
+cur = conn.cursor()
 
-s = PartyAnimal('Sally')
-j = PartyAnimal('Jim')
+cur.execute('INSERT INTO Tracks (title, plays) VALUES (?, ?)', ('Thunderstruck', 20))
+cur.execute('INSERT INTO Tracks (title, plays) VALUES (?, ?)', ('My Way', 15))
+conn.commit()
 
-s.party()
-j.party()
-s.party()
+print('Tracks:')
+cur.execute('SELECT title, plays FROM Tracks')
+for row in cur:
+    print(row)
+
+
+cur.execute('DELETE FROM Tracks WHERE plays < 100')
+conn.commit()
+
+cur.close()
