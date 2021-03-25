@@ -1,19 +1,17 @@
 class PartyAnimal:
     x = 0
-
-    def __init__(self):
-        print("I am constructed")
+    name = ''
+    def __init__(self, nam):
+        self.name = nam
+        print(self.name,'constructed')
 
     def party(self):
         self.x = self.x + 1
-        print('So far', self.x)
+        print(self.name,'party count', self.x)
 
-    def __del__(self):
-        print("I am destructed", self.x)
+s = PartyAnimal('Sally')
+j = PartyAnimal('Jim')
 
-
-an = PartyAnimal()
-an.party()
-an.party()
-an = 42
-print('an contains', an)
+s.party()
+j.party()
+s.party()
