@@ -1,19 +1,24 @@
-import sqlite3
+def arithmetic_arranger(problems, *args):
+    kalkulacija = ""
+    line = ""
 
-conn = sqlite3.connect('music.sqlite')
-cur = conn.cursor()
-
-cur.execute('INSERT INTO Tracks (title, plays) VALUES (?, ?)', ('Thunderstruck', 20))
-cur.execute('INSERT INTO Tracks (title, plays) VALUES (?, ?)', ('My Way', 15))
-conn.commit()
-
-print('Tracks:')
-cur.execute('SELECT title, plays FROM Tracks')
-for row in cur:
-    print(row)
+    for vl in problems:
+        tc = vl.split(" ")
+        kalkulacija += "{:>6}\n{:>1} {:>4}\n".format(tc[0], tc[1], tc[2])
+        line += kalkulacija
 
 
-cur.execute('DELETE FROM Tracks WHERE plays < 100')
-conn.commit()
+    print(line)
 
-cur.close()
+
+
+
+
+arithmetic_arranger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
+
+
+# racunanje = "{:>6}\n{:>1} {:>4}".format("32", "+", "8")
+# racunanje1 = "{:>6}\n{:>1} {:>4}".format("1", "-", "3801")
+# print(racunanje,"\t",racunanje1)
+
+
